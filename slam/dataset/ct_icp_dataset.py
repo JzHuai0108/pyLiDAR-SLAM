@@ -53,7 +53,7 @@ if _with_ct_icp:
             for field_name in self.__dict__:
                 if field_name == "dataset":
                     field_value = getattr(self, field_name)
-                    field_value = getattr(pct.CT_ICP_DATASET, field_value)
+                    field_value = getattr(pct.DATASET, field_value)
                     setattr(options, field_name, field_value)
                 else:
                     field_value = getattr(self, field_name)
@@ -195,15 +195,15 @@ if _with_ct_icp:
             if "_vel" in seq_name:
                 return pct.NCLT
             if seq_name in CT_ICPDatasetLoader.__KITTI_CARLA_SEQUENCE:
-                return pct.KITTI_CARLA
+                return pct.DATASET.KITTI_CARLA
             if seq_name in CT_ICPDatasetLoader.__KITTI_SEQUENCE:
-                return pct.KITTI_raw
+                return pct.DATASET.KITTI_raw
             else:
                 assert_debug(False, f"Sequence name {seq_name} does not match expected datasets")
 
         @staticmethod
-        def is_iterable_dataset(dataset: pct.CT_ICP_DATASET):
-            return dataset == pct.NCLT
+        def is_iterable_dataset(dataset: pct.DATASET):
+            return dataset == pct.DATASET.NCLT
 
         @staticmethod
         def have_sequence(seq_name):

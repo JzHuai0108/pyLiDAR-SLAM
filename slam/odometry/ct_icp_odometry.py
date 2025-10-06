@@ -38,7 +38,7 @@ if _with_ct_icp:
                     if key_type in [str, int, float, bool]:
                         cls.__annotations__[key] = key_type
                         setattr(cls, key, default_value)
-                    elif key_type in [pct.ICP_DISTANCE, pct.LEAST_SQUARES, pct.CT_ICP_DATASET, pct.MOTION_COMPENSATION,
+                    elif key_type in [pct.ICP_DISTANCE, pct.LEAST_SQUARES, pct.DATASET, pct.MOTION_COMPENSATION,
                                       pct.CT_ICP_SOLVER, pct.INITIALIZATION]:
                         # Replace pyct_icp enums by string
                         cls.__annotations__[key] = str
@@ -184,21 +184,21 @@ if _with_ct_icp:
 
     def default_drive_config() -> CT_ICPOdometryConfig:
         default_config = CT_ICPOdometryConfig()
-        default_pct_options = pct.DefaultDrivingProfile()
+        default_pct_options = pct.OdometryOptions.DefaultDrivingProfile()
         default_config.options = OdometryOptionsWrapper.build_from_pct(default_pct_options)
         return default_config
 
 
     def robust_drive_config() -> CT_ICPOdometryConfig:
         default_config = CT_ICPOdometryConfig()
-        default_pct_options = pct.RobustDrivingProfile()
+        default_pct_options = pct.OdometryOptions.RobustDrivingProfile()
         default_config.options = OdometryOptionsWrapper.build_from_pct(default_pct_options)
         return default_config
 
 
     def default_small_motion_config() -> CT_ICPOdometryConfig:
         default_config = CT_ICPOdometryConfig()
-        default_pct_options = pct.DefaultRobustOutdoorLowInertia()
+        default_pct_options = pct.OdometryOptions.DefaultRobustOutdoorLowInertia()
         default_config.options = OdometryOptionsWrapper.build_from_pct(default_pct_options)
         return default_config
 
