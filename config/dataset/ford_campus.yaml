@@ -1,6 +1,6 @@
 # @package _group_
 dataset: ford_campus
-root_dir: ${env:FORD_ROOT}
+root_dir: ${oc.env:FORD_ROOT}
 
 train_sequences: ["dataset-1", "dataset-2"]
 test_sequences: []

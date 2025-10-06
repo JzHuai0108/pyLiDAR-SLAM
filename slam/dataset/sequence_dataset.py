@@ -84,7 +84,7 @@ class DatasetOfSequences(Dataset):
         elem = batch[0]
         if elem is None:
             return batch
-        if isinstance(elem, collections.Mapping):
+        if isinstance(elem, collections.abc.Mapping):
             result = dict()
             for key in elem:
                 if "numpy" in key:

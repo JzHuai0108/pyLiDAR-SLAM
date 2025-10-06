@@ -1,6 +1,6 @@
 # @package _group_
 dataset: kitti
-kitti_sequence_dir: ${env:KITTI_ODOM_ROOT}
+kitti_sequence_dir: ${oc.env:KITTI_ODOM_ROOT}
 lidar_height: 64
 lidar_width: 720
 up_fov: 3

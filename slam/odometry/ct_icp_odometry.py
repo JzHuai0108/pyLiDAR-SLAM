@@ -288,7 +288,7 @@ if _with_ct_icp:
 
                 new_points, __filter = remove_nan(numpy_pc)
 
-                if self.options.ct_icp_options.distance == pct.CT_POINT_TO_PLANE:
+                if self.options.ct_icp_options.parametrization == pct.POSE_PARAMETRIZATION.CONTINUOUS_TIME:
                     # CT_ICP requires timestamps
                     assert_debug(self.config.timestamps_key in data_dict,
                                  f"[CT_ICP] The timestamps dict {self.config.timestamps_key} is not in the dict containing keys={data_dict.keys()}.\n"

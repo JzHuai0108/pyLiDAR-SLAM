@@ -1,6 +1,6 @@
 # @package _group_
 dataset: nclt
-root_dir: ${env:NCLT_ROOT}
+root_dir: ${oc.env:NCLT_ROOT}
 
 train_sequences: ["2012-01-08"]
 test_sequences: []

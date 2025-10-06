@@ -1,6 +1,6 @@
 # @package _group_
 dataset: kitti_360
-root_dir: ${env:KITTI_360_ROOT}
+root_dir: ${oc.env:KITTI_360_ROOT}
 lidar_height: 64
 lidar_width: 720
 up_fov: 3

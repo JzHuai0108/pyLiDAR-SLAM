@@ -71,7 +71,7 @@ def check_tensor(tensor: (torch.Tensor, np.ndarray), sizes: list, tensor_type: O
     assert_debug(sizes_match(tensor, sizes),
                  f"[BAD TENSOR SHAPE] Wrong tensor shape got {tensor.shape} expected {sizes}")
     if tensor_type is not None:
-        check_type("tensor", tensor, tensor_type)
+        check_type(tensor, tensor_type)
 
 
 def _decorator(d):

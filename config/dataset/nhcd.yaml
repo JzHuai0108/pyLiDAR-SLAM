@@ -1,6 +1,6 @@
 # @package _group_
 dataset: nhcd
-root_dir: ${env:NHCD_ROOT}
+root_dir: ${oc.env:NHCD_ROOT}
 lidar_height: 64
 lidar_width: 720
 up_fov: 25

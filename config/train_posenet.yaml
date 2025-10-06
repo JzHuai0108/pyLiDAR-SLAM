@@ -1,4 +1,4 @@
-train_dir: ${env:TRAIN_DIR}
+train_dir: ${oc.env:TRAIN_DIR}
 sequence_len: 2
 num_input_channels: 3
 
